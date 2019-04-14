@@ -1,0 +1,15 @@
+{
+    "name": "william-cirino/bot-crawler",
+    "description": "Crawler parteste para capturação de informações",
+    "authors": [
+        {
+            "name": "williamWHC",
+            "email": "williamhenrquecirino@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+
+        }
+    }
+}

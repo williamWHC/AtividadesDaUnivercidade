@@ -1,0 +1,19 @@
+{
+    "name": "forseti/exemplocrawler",
+    "description": "Exemplo de crawler",
+    "type": "project",
+    "authors": [
+        {
+            "name": "williamWHC",
+            "email": "williamhenrquecirino@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Forseti\\exemplocrawler\\src\\": "src/"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    }
+}

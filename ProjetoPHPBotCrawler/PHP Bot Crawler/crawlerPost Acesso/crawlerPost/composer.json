@@ -1,0 +1,21 @@
+{
+    "name": "forseti/crawlerpost",
+    "description": "teste de post",
+    "type": "project",
+    "authors": [
+        {
+            "name": "joao paulo",
+            "email": "joao.silva@forseti.com.br"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "symfony/dom-crawler": "^3.4"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Forseti\\crawlerPost\\src\\": "src/"
+        }
+    }
+}

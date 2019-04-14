@@ -1,0 +1,202 @@
+string(9469) "<head>
+<title>Login example page to test the PHP MySQL online system</title>
+<meta name="keywords" content="login example, php login, mysql login example">
+<meta name="description" content="Free login example page">
+<meta name="Content-Language" content="english">
+<meta name="Revisit-after" content="56 days">
+<meta name="Distribution" content="Global">
+<meta name="Copyright" content="Copyright ">
+<meta name="ROBOTS" content="ALL">
+<link rel="stylesheet" type="text/css" href="tds.css">
+<style type="text/css">
+.auto-style1 {
+	text-align: center;
+}
+</style>
+</head>
+<body background="DiscoverBack.gif" style="
+    SCROLLBAR-ARROW-COLOR: #BBCCFF; 
+    SCROLLBAR-TRACK-COLOR: #C9DAF7; 
+    SCROLLBAR-FACE-COLOR:  #002163;" topmargin="0" leftmargin="15" marginwidth="0" marginheight="0">
+<div align="center"><center>
+
+<strong><font color="#000000" face="Comic Sans MS">TheDemoSite.co.uk</font></strong>  
+	sample code: <a href="http://asp.thedemosite.co.uk/">ASP and MySQL</a> 
+	- <a href="http://php.thedemosite.co.uk/">PHP and MySQL</a>
+	- <a href="http://thedemosite.co.uk/phpformmailer/">phpFormMailer</a> -
+	<a href="http://asp.thedemosite.co.uk/asp_contact_email_form/asp_contact_email_form.asp">
+	ASP Contact form</a>  
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td width="100%"><p align="center"><img height="2" src="line.gif" width="99%" border="0" alt="PHP code examples with database connectivity"></p></td>
+  </tr>
+<tr>
+<td width="100%">
+<img height="2" src="line.gif" width="99%" border="0" alt="PHP code examples with database connectivity"><div align="center"><center><table border="0" width="98%" cellspacing="0" cellpadding="0"><tr>
+<td style="width: 22%"><font face="Comic Sans MS"><big><strong>PHP and 
+		MySQL<br></strong>sample code</big></font></td>
+        <td><p align="center"><small>Just examples of <b>PHP</b> code, linking to your <b>MySQL</b>
+        database and JavaScript.<br><a href="index.php">1. Home</a> | <a href="thedatabase.php">2. The Database</a> | <a href="addauser.php">3. Add a User</a> | <a href="login.php">4. Login</a> | <a href="getyourowndbonline.php">5. Get your db online</a></small></p></td>
+      </tr></table></center></div>
+</td>
+  </tr>
+<tr>
+<td width="100%"><p align="center"><img height="2" src="line.gif" width="99%" border="0" alt="PHP code examples with database connectivity"><br></p></td>
+  </tr>
+</table>
+</center></div>
+
+<table border="0" width="100%"><tr>
+<td class="auto-style1">
+	<div style="font-style:italic; color:green">All code updated April 2014, now uses PHP/PDO for database connectivity</div>
+<noscript>
+<p><strong><font color="#FF0000"><big>Warning: </big>Your Internet Browser has JavaScript
+switched off or is an older browser.  You will not be able to complete this
+form.  Please switch on JavaScript or return with a newer browser. </font></strong></p>
+</noscript>
+<script language="javaScript">
+<!--
+function validateForm()
+{
+ with (document.saveform)
+ {
+  var saveit = true;
+  if (username.value.length < 4)
+  {
+   alert ("Username too short.  The username must be at least 4 characters in length.");
+   username.focus();
+   username.select();
+   saveit = false;
+  }
+  if ((password.value.length < 4) && saveit)
+  {
+   alert ("Password too short.  The password must be at least 4 characters in length.");
+   password.focus();
+   password.select();
+   saveit = false;
+  }
+  if ((fswords(username.value)) && saveit)
+  {
+   alert ("The username contains swear words.  Please change it you silly person!");
+   username.focus();
+   username.select();
+   saveit = false;
+  }
+  if ((fswords(password.value)) && saveit)
+  {
+   alert ("The password contains swear words.  Please change it you silly person!");
+   password.focus();
+   password.select();
+   saveit = false;
+  }
+  else if (saveit) submit();
+ }
+}
+swords = new Array()
+swords [0] = "fuck"
+swords [1] = "shit"
+swords [2] = "bastard"
+swords [3] = "wank"
+swords [4] = "arse"
+swords [5] = "bitch"
+swords [6] = "cunt"
+function fswords(theword)
+{
+ thereturn=false;
+ theword = theword.toLowerCase();
+ for (i=0; i < swords.length; i++) 
+ {   
+  testit=theword.indexOf(swords[i],0);
+  //alert(swords[i]+ " testit ="+testit)
+  if (testit > -1) thereturn=true;
+ }
+ return thereturn
+}
+//-->
+</script><p align="center"><big><strong>4. Login</strong></big></p>
+<p align="center"><strong>The status was:</strong><big></big></p>
+<blockquote>
+  <blockquote>
+<font color="#008000"></font><center><b>**Successful Login**</b></center>  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <big></big><p align="center">Enter your login details you added on the previous page and
+    test the login.<br>
+    The success or failure will be shown above.</p>
+  </blockquote>
+</blockquote>
+
+<form action="login.php" name="saveform" method="POST" align="center">
+  <div align="center"><center><table border="0" width="704" cellspacing="0" cellpadding="0"><tr>
+<td width="385" align="right"><table border="0" height="59" width="226" bgcolor="#FFFFFF" cellspacing="1" cellpadding="0">
+<tr>
+<td width="154" height="19" bgcolor="#000080" align="right"><p><font color="#FFFFFF"><small>Username:</small></font></p></td>
+          <td width="133" height="19" bgcolor="#000080" align="left"><p><input name="username" value size="8" maxlength="16" tabindex="1"></p></td>
+          <td width="64" height="19" bgcolor="#C0C0C0" align="center"><div align="center"><center><p><a href="javascript:alert('The%20username%20must%20be%20between%204%20and%2016%20characters%20long.')"><small><small>Help</small></small></a></p></center></div></td>
+        </tr>
+<tr align="center">
+<td width="154" height="17" bgcolor="#000080" align="right"><p><font color="#FFFFFF"><small>Password:</small></font></p></td>
+          <td height="17" width="133" bgcolor="#000080" align="left"><p><input type="password" name="password" size="8" tabindex="2" maxlength="8"></p></td>
+          <td height="17" bgcolor="#C0C0C0" align="center"><a href="javascript:alert('The%20password%20must%20be%20between%204%20and%208%20characters%20long.')"><small><small>Help</small></small></a></td>
+        </tr>
+<tr align="center">
+<td width="154" height="1" bgcolor="#000080"></td>
+          <td width="133" height="1" bgcolor="#000080" align="left"><p><input type="button" name="FormsButton2" value="Test Login" onclick="validateForm()" tabindex="3" style="font-family: Verdana; font-size: 8pt"></p></td>
+          <td width="64" height="1" bgcolor="#C0C0C0" align="center"><a href="javascript:alert('Click%20to%20save%20the%20details')"><small><small>Help</small></small></a></td>
+        </tr>
+</table></td>
+      <td align="center" width="319"><small><strong><a href="getyourowndbonline.php">Now move on
+      to the final section</a></strong></small></td>
+    </tr></table></center></div>
+</form>
+
+<p align="center"> </p>
+
+<p align="center"><a href="logincode.php">Click here to view the PHP and JavaScript code</a>
+used for this page, or <a href="demo-code.zip">download the free zip here</a></p>
+
+<p align="center"> </p>
+</td>
+ <td width="170">
+  <center> 
+  <br><table cellspacing="0" cellpadding="0" border="0"><tr>
+<td><div style="PADDING-LEFT: 0px; OVERFLOW: hidden; WIDTH: 133px">
+<font style="FONT-SIZE: 13px" face="arial,sans-serif" color="#0000ff"><a href="http://www.seiretto.com/web_hosting/reseller_hosting.php"><b>
+</b><p>UK reseller hosting</p></a></font><font style="FONT-SIZE: 13px" face="arial,sans-serif" color="#000000"><br>
+start your own web reseller business </font><font style="FONT-SIZE: 10px" face="arial,sans-serif" color="#008000">Seiretto.com</font>
+    </div></td>
+  </tr></table>
+<br><table cellspacing="0" cellpadding="0" border="0"><tr>
+<td><div style="PADDING-LEFT: 0px; OVERFLOW: hidden; WIDTH: 133px">
+		<font style="FONT-SIZE: 13px" face="arial,sans-serif" color="#0000ff">
+		<a href="http://www.AcHost.co.uk/"><b>
+</b><p>AC.UK web hosting</p></a><br></font><font style="FONT-SIZE: 13px" face="arial,sans-serif" color="#000000">
+UK academic domain names and web hosting<br></font><font style="FONT-SIZE: 10px" face="arial,sans-serif" color="#008000">AcHost.co.uk</font>
+    	<font style="FONT-SIZE: 13px" face="arial,sans-serif" color="#0000ff">
+		<a href="http://www.govhost.uk/"><b>
+</b><p>GOV.UK web hosting</p></a><br></font><font style="FONT-SIZE: 13px" face="arial,sans-serif" color="#000000">
+UK public sector domain names and web hosting<br></font>
+<font style="FONT-SIZE: 10px" face="arial,sans-serif" color="#008000">GOVHost.UK</font>
+    </div></td>
+  </tr></table>
+<br><table cellspacing="0" cellpadding="0" border="0"><tr>
+<td>
+	 </td>
+  </tr></table>
+</center>
+ </td>
+  </tr></table>
+<p align="center"><br><img height="2" src="line.gif" width="730" border="0"><br><strong><font color="#000000" face="Comic Sans MS">TheDemoSite.co.uk</font></strong> is a
+MySQL database and PHP FREE code example site hosted with: <br><strong><a href="https://www.seiretto.co.uk/">Janet approved Registrar for AC.UK and GOV.UK domain names - Seiretto Ltd</a></strong>
+Copyright 1996-2015.  All rights reserved.
+</p>
+<p align="center">sample code: <a href="http://asp.thedemosite.co.uk/">ASP and MySQL</a> 
+	- <a href="http://php.thedemosite.co.uk/">PHP and MySQL</a>
+
+
+- <a href="http://thedemosite.co.uk/phpformmailer/">phpFormMailer</a> -
+<a href="http://asp.thedemosite.co.uk/asp_contact_email_form/asp_contact_email_form.asp">
+ASP Contact form</a><br><img height="2" src="line.gif" width="730" border="0"></p>
+</body>"

@@ -1,0 +1,33 @@
+1*  inicia o composer dentro do projeto ( pasta criada para o projeto)
+2*  para instalar o composer dentro do projeto (sudo apt-get install composer
+3*  Executar o composer dentro projeto composer ( composer init )
+4*  Definir as informações como
+        Package name        "Enter"     -
+        Description         "Enter"     - descrição no Nome do projeto que vai ser feito
+        Author              "Enter"     - confirma do dados pessoal do criado do projeto
+        Minimun Stability   "Enter"     - pode ser definido uma biblioteca que esteja instavel para que ela não ocorra problema no projeto
+        Package Type        "Projeto"   - Defini o tipo de trabalho que sera feito (Projeto,plugin do composer,etc)
+        License             "Enter"
+        Would you like to define your dependencies "Enter" - Pergunta se Deseja já instalar as dependencias no projeto Ex:Guzzle
+        Seacher for a package "Enter"   - vai pedir se quer pedendencia do dev
+
+5* ir na pasta do projeto
+6* acessar o composer.jsaon e configurar o autoload, dar o comando
+    definir namespace ainda dentro do composer.json
+
+   "autoload": {
+         "psr-4": {
+             "Forseti\\exemplocrawler\\src\\": "src/"
+
+7* criar uma pasta src na raiz do projeto
+8* entrar no site https://packagist.org/
+na pesquisa colocar guzzlehttp/guzzle
+dar o comando composer require guzzlehttp/guzzle no terminal
+
+criar i=uma classe na pasta src com o nome PageObject
+
+acima de class da o namespace (namespace Forseti\exemplocrawler\src;)
+use GuzzleHttp\Client;
+
+criar uma pasta index.php no projeto
+
